@@ -8,7 +8,7 @@
 #' 
 #'
 #' @examples
-coingecko_get_data <- function(maxcoins, coin_ids, ...){
+get_history_panel <- function(maxcoins, coin_ids, ...){
   
   require(geckor)
   require(data.table)
