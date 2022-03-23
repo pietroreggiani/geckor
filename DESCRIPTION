@@ -6,7 +6,7 @@ Authors@R: c(
            role = c("aut", "cre"),
            email = "sergey@nextgamesolutions.com"),
     person("Next Game Solutions", role = c("cph")),
-    person("Pietro", "Reggiani", role = "minor contributor")
+    person("Pietro", "Reggiani", role = "ctb")
   )
 Description: Collect the current and historical cryptocurrency market data using 
     the public 'CoinGecko' API (<https://www.coingecko.com/en/api>).
