@@ -58,12 +58,13 @@ coin_history <- function(coin_id,
   if (length(days) > 1L) {
     rlang::abort("Only one `days` value is allowed")
   }
-
-  validate_arguments(
-    arg_coin_ids = coin_id,
-    arg_vs_currencies = vs_currency,
-    arg_max_attempts = max_attempts
-  )
+  
+  # removed because it adds to the API call limits. No problem if you are sure to give the right inputs.
+  #validate_arguments(
+    #arg_coin_ids = coin_id,
+    #arg_vs_currencies = vs_currency,
+    #arg_max_attempts = max_attempts
+  #)
 
   if (is.na(days) |
     is.na(suppressWarnings(as.numeric(days))) && days != "max") {
