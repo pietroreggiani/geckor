@@ -23,6 +23,8 @@ knitr::opts_chunk$set(
 
 `geckor` is an R client for the public [CoinGecko API](https://www.coingecko.com/en/api#explore-api). This package implements several endpoints offered by that API, allowing users to collect the current and historical market data on thousands of cryptocurrencies from more than 300 exchanges. Results are returned in a tabular form (as [tibbles](https://tibble.tidyverse.org/)), ready for any downstream analyses.
 
+This version of the package has minor changes coming from Pietro, tayloring the package to his needs.
+
 ## Installation
 
 A stable version of this package can be installed from [CRAN](https://cran.r-project.org/web/packages/geckor/index.html) the usual way:
@@ -35,7 +37,7 @@ To install the development version from GitHub, use the following command(s):
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("next-game-solutions/geckor")
+devtools::install_github("pietroreggiani/geckor")
 ```
 
 ## Examples
