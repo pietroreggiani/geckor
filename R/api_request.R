@@ -43,7 +43,7 @@ api_request <- function(url, max_attempts = 3) {
     if (httr::http_error(r)) {
       message("\nFailed to call ", url)
       httr::message_for_status(r)
-      delay <- 2^attempt
+      delay <- 60  # used to be 2^attempt, changed by Pietro
       message("\nRetrying after ", round(delay, 2), " seconds...")
       Sys.sleep(delay)
     } else {
