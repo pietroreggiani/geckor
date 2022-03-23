@@ -20,13 +20,26 @@ get_history_panel <- function(maxcoins, coin_ids, ...){
 
     coin_id = coin_ids[[coin.num]]
 
-    coin_data = geckor::coin_history(coin_id = coin_id, ...  )
+    coin_data = try( geckor::coin_history(coin_id = coin_id, ...  ) )
 
-    coinsdata = rbindlist( list(coinsdata, coin_data) , use.names = TRUE  )
+    # if the query gave an error and stopped, the try will return an error
+    # in that case stop the function and return wathever was queried so far.
 
-    calls_done = calls_done + 1
+    if (  class(coin_data)  == "try-error"  ){
+      message("The API call encountered a problem. The code is halted.")
+      return(coinsdata)
 
-    message("We have done ", calls_done , " calls.")
+    } else {
+
+      coinsdata = rbindlist( list(coinsdata, coin_data) , use.names = TRUE  )
+
+      calls_done = calls_done + 1
+
+      message("We have done ", calls_done , " calls.")
+
+    }
+
+
 
   }
 
