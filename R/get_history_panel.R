@@ -8,13 +8,15 @@
 #' @export
 #'
 #' @examples
-get_history_panel <- function(maxcoins, coin_ids, ...){
+get_history_panel <- function(coin_ids , ...){
 
   require(geckor)
   require(data.table)
 
   coinsdata = data.table()
   calls_done = 0
+
+  maxcoins = length(coin_ids)
 
   for (coin.num in 1:maxcoins){
 
