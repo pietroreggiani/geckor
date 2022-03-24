@@ -4,14 +4,14 @@
 \alias{get_history_panel}
 \title{Get historical data for panel of coins}
 \usage{
-get_history_panel(maxcoins, coin_ids, ...)
+get_history_panel(coin_ids, ...)
 }
 \arguments{
-\item{maxcoins}{Limit the query to the first 'maxcoins' in the coin_ids list. To get the full list of coins, run \code{geckor::supported_coins()}}
-
 \item{coin_ids}{the list or vector containing the id's of the coins. This comes from using \code{geckor::supported_coins()}.}
 
 \item{...}{additional parameters to be passed to \code{geckor::coin_history()}}
+
+\item{maxcoins}{Limit the query to the first 'maxcoins' in the coin_ids list. To get the full list of coins, run \code{geckor::supported_coins()}}
 }
 \value{
 a data table with a panel of coins at daily or more granular frequency. For details, see \code{geckor::coin_history()}.

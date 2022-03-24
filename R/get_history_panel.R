@@ -7,11 +7,13 @@
 #' @return a data table with a panel of coins at daily or more granular frequency. For details, see `geckor::coin_history()`.
 #' @export
 #'
+#' @importFrom data.table data.table rbindlist
+#'
 #' @examples
 get_history_panel <- function(coin_ids , ...){
 
 
-  coinsdata = data.table::data.table()
+  coinsdata = data.table()
   calls_done = 0
 
   maxcoins = length(coin_ids)
@@ -31,7 +33,7 @@ get_history_panel <- function(coin_ids , ...){
 
     } else {
 
-      coinsdata = data.table::rbindlist( list(coinsdata, coin_data) , use.names = TRUE  )
+      coinsdata = rbindlist( list(coinsdata, coin_data) , use.names = TRUE  )
 
       calls_done = calls_done + 1
 
