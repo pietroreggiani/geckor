@@ -38,6 +38,7 @@ Imports:
     tibble,
     tidyr,
     tidyselect,
-    curl
+    curl,
+    data.table
 VignetteBuilder: knitr
 RdMacros: lifecycle

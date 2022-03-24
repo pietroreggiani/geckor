@@ -10,8 +10,6 @@
 #' @examples
 get_history_panel <- function(coin_ids , ...){
 
-  require(geckor)
-  require(data.table)
 
   coinsdata = data.table()
   calls_done = 0
