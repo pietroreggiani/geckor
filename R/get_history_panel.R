@@ -11,7 +11,7 @@
 get_history_panel <- function(coin_ids , ...){
 
 
-  coinsdata = data.table()
+  coinsdata = data.table::data.table()
   calls_done = 0
 
   maxcoins = length(coin_ids)
@@ -31,7 +31,7 @@ get_history_panel <- function(coin_ids , ...){
 
     } else {
 
-      coinsdata = rbindlist( list(coinsdata, coin_data) , use.names = TRUE  )
+      coinsdata = data.table::rbindlist( list(coinsdata, coin_data) , use.names = TRUE  )
 
       calls_done = calls_done + 1
 
