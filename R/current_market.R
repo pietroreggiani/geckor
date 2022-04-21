@@ -66,7 +66,8 @@
 #' }
 current_market <- function(coin_ids,
                            vs_currency = "usd",
-                           max_attempts = 3) {
+                           max_attempts = 3,
+                           price_change_percentage = "24h,1y") {
   validate_arguments(
     arg_coin_ids = coin_ids,
     arg_vs_currencies = vs_currency,
@@ -82,8 +83,8 @@ current_market <- function(coin_ids,
     ids = paste(coin_ids, collapse = ","),
     vs_currency = vs_currency,
     order = "market_cap_desc",
-    price_change_percentage = "1h,24h,7d,14d,30d,200d,1y",
-    per_page = 50L,
+    price_change_percentage = price_change_percentage,
+    per_page = 100L,
     sparkline = tolower(FALSE)
   )
 
